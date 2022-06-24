@@ -1,0 +1,16 @@
+<div class="container-fluid col-3 mt-lg-4">
+    <h1>Login</h1>
+    <%= form_tag '/login' do %>
+        <div class="col-auto">
+            <%= label_tag "Email"%><br />
+            <%= text_field_tag :email %>
+        </div>
+        <div class="col-auto">
+            <%= label_tag "Password"%><br />
+            <%= password_field_tag :password %>
+        </div>
+        <div class="col-auto mt-lg-4">
+            <%= submit_tag "Login", :class=>"btn btn-primary mb-3" %>
+        </div>
+    <% end %>
+</div>
