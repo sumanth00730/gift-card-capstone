@@ -1,2 +1,29 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<div class="container-fluid col-6 mt-lg-4">
+    <h1>Create New Order</h1>
+    <%= form_for :order, url: '/orders/create' do |f| %>
+        <div class="col-auto">
+            <%= f.label :recipient_first_name, :class=>"form-label" %>
+            <%= f.text_field :rfname, :class=>"form-control" %>
+        </div>
+        <div class="col-auto">
+            <%= f.label :recipient_last_name, :class=>"form-label" %>
+            <%= f.text_field :rlname, :class=>"form-control" %>
+        </div>
+        <div class="col-auto">
+            <%= f.label :gift_card_value, :class=>"form-label" %>
+            <%= f.text_field :gcvalue, :class=>"form-control" %>
+        </div>
+        <div class="col-auto">
+            <%= f.label :phone, :class=>"form-label" %>
+            <%= f.number_field :phone, :class=>"form-control" %>
+        </div>
+        <div class="col-auto">
+            <%= f.label :address, :class=>"form-label" %>
+            <%= f.text_field :address, :class=>"form-control" %>
+        </div>
+        <div class="col-auto mt-lg-4">
+            <%= f.submit "Create", :class=>"btn btn-primary mb-3" %>
+        </div>
+    <% end %>
+</div>
+

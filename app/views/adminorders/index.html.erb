@@ -1,5 +1,5 @@
-<div class="container-fluid col-8">
-    <h1>Orders</h1>
+<div class="container-fluid col-10">
+    <h1>Admin Orders</h1>
     <% time = Time.now.getutc %>
     <p>Date: <%= time.to_s[0..10] %></p>
     <table class="table">
@@ -11,10 +11,11 @@
             <th scope="col">Gift Card Value</th>
             <th scope="col">Commission</th>
             <th scope="col">Delivery Status</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        <% @orders.each do |t|%>
+        <% @adminorders.each do |t|%>
         <tr>
             <th scope="row"><%= t.id %></th>
             <td><%= t.rfname %></td>
@@ -22,6 +23,7 @@
             <td><%= t.gcvalue %></td>
             <td><%= t.apayable %></td>
             <td><%= t.delivery_status %></td>
+            <td><%= button_to "Mark as delivered", edit_adminorder_url(t.id), params: { aid: t.id  }, :class=>"btn btn-primary" %></td> 
         </tr>
         <% end %>
     </tbody>
