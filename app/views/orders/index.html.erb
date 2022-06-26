@@ -18,7 +18,7 @@
         <tr>
             <th scope="row"><%= t.id %></th>
             <td><%= t.rfname %></td>
-            <td><%= t.created_at %></td>
+            <td><%= t.created_at.to_s[0..10] %></td>
             <td><%= t.gcvalue %></td>
             <td><%= t.apayable %></td>
             <td><%= t.delivery_status %></td>

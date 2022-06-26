@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :adminorders
   post 'adminorders/:id', to: 'adminorders#show'
   post '/adminorders/:id/edit', to: 'adminorders#edit'
+  get '/adminorders/new', to: 'orders#new'
 
   get 'orders/new'
   post 'orders/create'
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'users/create'
 
-  # root "users#index"
+  root "orders#index"
   get '/signup', to: 'users#new'
   post '/users', to: 'users#create'
 end
