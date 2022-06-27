@@ -2,7 +2,7 @@ class AdminordersController < ApplicationController
   before_action :authorize
   
   def index
-    @adminorders = Order.all
+    @adminorders = Order.where(delivery_status: "Out for delivery")
   end
 
   def new
@@ -19,13 +19,12 @@ class AdminordersController < ApplicationController
 
   def edit
     @adminorder = Order.find(params[:aid])
-    p params[:id]
     @adminorder.delivery_status = "Delivered"
-    p @adminorder
     if @adminorder.save
       redirect_to '/adminorders'
     end
   end
+  
   private
   def adminorders_params
     params.require(:adminorders).permit(:rfname, :rlname, :gcvalue, :phone, :address)
