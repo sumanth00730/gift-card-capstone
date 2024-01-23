@@ -5,17 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 3.0.0
 
-* System dependencies
+* System dependencies - bundle install
 
-* Configuration
+* Configuration - rails default
 
-* Database creation
+* Database creation - rails db:migrate
 
-* Database initialization
+* Database initialization - SQLite
 
-* How to run the test suite
+* How to run the test suite - respec .
 
 * Services (job queues, cache servers, search engines, etc.)
 
